@@ -14,13 +14,14 @@ class Chart extends Component
     public $id;
     public $type;
     public $labels;
-    public $chartValues;
-    public function __construct($id, $type = 'bar', $labels = [], $chartValues = [])
+    public $datasets;
+    
+    public function __construct($id, $type = 'bar', $labels = [], $datasets = [])
     {
         $this->id = $id;
         $this->type = $type;
         $this->labels = $labels;
-        $this->chartValues = $chartValues;
+        $this->datasets = $datasets;
     }
 
     /**

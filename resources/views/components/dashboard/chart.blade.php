@@ -1,39 +1,25 @@
-@props([
-  'id' => 'chart',
-  'type' => 'bar',
-  'labels' => [],
-  'chartValues' => []
-])
-
-<canvas id="{{ $id }}" class="w-full"></canvas>
+<canvas id="{{ $id }}" class="w-full h-96"></canvas>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        new Chart(document.getElementById('{{ $id }}'), {
+        const ctx = document.getElementById('{{ $id }}').getContext('2d');
+
+        // console.log(@json($labels));
+        // console.log(@json($datasets));
+
+        new Chart(ctx, {
             type: '{{ $type }}',
             data: {
                 labels: @json($labels),
-                datasets: [{
-                    label: 'Dataset',
-                    data: @json($chartValues),
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(255, 206, 86, 0.6)'
-                    ],
-                    borderWidth: 1
-                }]
+                datasets: @json($datasets)
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false, // respeita altura do container
+                maintainAspectRatio: false,
                 scales: {
-                y: {
-                    beginAtZero: true
-                }
+                    y: { beginAtZero: false }
                 }
             },
         });
-        
     });
 </script>

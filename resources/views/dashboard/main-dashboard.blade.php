@@ -53,18 +53,24 @@
       {{--INFO BOXES END--}}
 
       {{--CHARTS--}}
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <div class="col-span-1 rounded-lg border-gray-300 dark:border-gray-600 h-100 md:h-100">
+      <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="col-span-2 rounded-lg border-gray-300 dark:border-gray-600 h-100 md:h-100">
          
           <x-dashboard.chart
               id="salesChart"
-              type="bar"
+              type="line"
               :labels="$labels"
-              :chart-values="$chartData"
+              :datasets="$datasets"
           ></x-dashboard.chart>
         
         </div>
-        <div class="col-span-1 border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72">
+        <div class="col-span-1 rounded-lg border-gray-300 dark:border-gray-600 md:h-100">
+             <x-dashboard.chart
+                id="colaboratorChart"
+                type="pie"
+                :labels="$label"
+                :datasets="$pieData"
+            ></x-dashboard.chart>
         </div>
       </div>
       <div
