@@ -28,13 +28,13 @@
 <body class="bg-gray-50 text-gray-800">
 
      <!-- Header-->
-    <x-header />
+    <x-views.header />
 
      <main>
         {{ $slot }}
     </main>
 
     <!-- Footer -->
-    <x-footer />
+    <x-views.footer />
 </body>
 </html>

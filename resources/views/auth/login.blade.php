@@ -2,9 +2,10 @@
 <div class="p-3 space-y-4 md:space-y-6 sm:p-8">
     
       <a href="#" class="w-full flex items-center mb-6 text-2xl font-semibold text-gray-700">
-        <img class="w-8 h-8 mr-2" src="{{asset('/images/logo.png')}}" alt="logo">{{env("APP_NAME")}}</a>
+        <img class="w-8 h-8 mr-2" src="{{asset('/images/logo.png')}}" alt="logo" />{{env("APP_NAME")}}
+      </a>
 
-    <form class="space-y-4 md:space-y-6" action="#">
+    <form class="space-y-4 md:space-y-6" action="#" method="POST">
       @csrf
         <div>
             <label for="email" class="block mb-2 text-sm font-medium text-black">Your email</label>
